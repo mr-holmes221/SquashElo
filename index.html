@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squash Elo Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <h1>Squash Elo Tracker</h1>
+        
+        <div>
+            <input type="text" id="playerName" placeholder="Enter player name">
+            <button onclick="addPlayer()">Add Player</button>
+        </div>
+
+        <h2>Players</h2>
+        <ul id="playerList"></ul>
+        
+        <h2>Matches</h2>
+        <ul id="matchList"></ul>
+        <button onclick="createMatches()">Generate Matches</button>
+        
+        <h2>Old Matches (T- <span id="removalCountdown">0</span> minutes)</h2>
+        <ul id="oldMatchList"></ul>
+        
+        <h2>Rankings</h2>
+        <table id="rankingTable">
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Elo Rating</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        
+        <h2>Match History</h2>
+        <ul id="matchHistory"></ul>
+        
+        <button id="resetButton" onclick="initiateReset()">Reset All Data</button>
+        <div id="resetConfirmation" style="display:none;">
+            <span>Are you sure? This will delete all data!</span>
+            <button onclick="confirmReset()">Yes, reset all data</button>
+            <button onclick="cancelReset()">Cancel</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
